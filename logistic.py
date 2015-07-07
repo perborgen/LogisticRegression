@@ -2,17 +2,13 @@ import math
 import numpy as np
 import pandas as pd
 from pandas import DataFrame
-from sklearn.linear_model import LogisticRegression
 from sklearn import preprocessing
-
-min_max_scaler = preprocessing.MinMaxScaler(feature_range=(-1,1))
-
+from sklearn.linear_model import LogisticRegression
+from sklearn.cross_validation import train_test_split
 from numpy import loadtxt, where
 from pylab import scatter, show, legend, xlabel, ylabel
-from sklearn.cross_validation import train_test_split
 
-
-
+min_max_scaler = preprocessing.MinMaxScaler(feature_range=(-1,1))
 df = pd.read_csv("data.csv", header=0)
 
 # clean up data
@@ -40,9 +36,6 @@ xlabel('Exam 1 score')
 ylabel('Exam 2 score')
 legend(['Not Admitted', 'Admitted'])
 #show()
-
-
-
 
 def Sigmoid(z):
 	G_of_Z = float(1.0 / float((1.0 + math.exp(-1.0*z))))
@@ -127,13 +120,3 @@ initial_theta = [0,0]
 alpha = 0.1
 iterations = 1000
 Logistic_Regression(X,Y,alpha,initial_theta,iterations)
-
-
-
-
-
-
-
-
-
-
