@@ -11,13 +11,24 @@ from pylab import scatter, show, legend, xlabel, ylabel
 min_max_scaler = preprocessing.MinMaxScaler(feature_range=(-1,1))
 df = pd.read_csv("data.csv", header=0)
 
+
 # clean up data
-df.columns = ["grade2","grade1","label"]
+df.columns = ["grade1","grade2","label"]
+
+x = df["label"].map(lambda x: float(x.rstrip(';')))
+
+
 X = df[["grade1","grade2"]]
 X = np.array(X)
 X = min_max_scaler.fit_transform(X)
 Y = df["label"].map(lambda x: float(x.rstrip(';')))
 Y = np.array(Y)
+
+
+# if want to create a new clean dataset 
+#X = pd.DataFrame.from_records(X,columns=['grade1','grade2'])
+#X.insert(2,'label',Y)
+#X.to_csv('data2.csv')
 
 # creating testing and training set
 X_train,X_test,Y_train,Y_test = train_test_split(X,Y,test_size=0.33)
@@ -119,4 +130,4 @@ def Declare_Winner(theta):
 initial_theta = [0,0]
 alpha = 0.1
 iterations = 1000
-Logistic_Regression(X,Y,alpha,initial_theta,iterations)
+#Logistic_Regression(X,Y,alpha,initial_theta,iterations)
