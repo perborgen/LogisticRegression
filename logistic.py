@@ -120,9 +120,9 @@ def Declare_Winner(theta):
 	if my_score > scikit_score:
 		print 'You won!'
 	elif my_score == scikit_score:
-		print 'Its a tie!'
+		#print 'Its a tie!'
 	else:
-		print 'Scikit won.. :('
+		#print 'Scikit won.. :('
 	print 'Your score: ', my_score
 	print 'Scikits score: ', scikit_score 
 
