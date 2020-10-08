@@ -1,5 +1,6 @@
 # LogisticRegression
 Logistic regression from scratch in Python
 
-This example uses gradient descent to fit the model.
-It also contains a Scikit Learn's way of doing logistic regression, so we can compare the two implementations.
+Logistic regression is basically a supervised classification algorithm. In a classification problem, the target variable(or output), y, can take only discrete values for given set of features(or inputs), X.
+
+This example uses gradient descent optimization algorithm to train the model. It also contains the logistic regression implementation using Scikit-learn library.This will help us compare the two implementations.
