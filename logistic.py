@@ -114,7 +114,7 @@ def Cost_Function_Derivative(X,Y,theta,j,m,alpha):
 ##is the vector with each dimensional component being the partial differential for each theta value
 def Gradient_Descent(X,Y,theta,m,alpha):
 	new_theta = []
-	constant = alpha/m
+	#constant = alpha/m
 	for j in xrange(len(theta)):
 		CFDerivative = Cost_Function_Derivative(X,Y,theta,j,m,alpha)
 		new_theta_value = theta[j] - CFDerivative
